@@ -56,9 +56,11 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         // Init Beacon
         beaconManager = BeaconManager.getInstanceForApplication(this);
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24")); // Set the beacon brand
-        RangedBeacon.setSampleExpirationMilliseconds(1100);    // The refresh interval
-        beaconManager.setBackgroundBetweenScanPeriod(20);
-        beaconManager.setForegroundBetweenScanPeriod(20);
+        //beaconManager.setRssiFilterImplClass(ArmaRssiFilter.class);
+        RangedBeacon.setSampleExpirationMilliseconds(5000);    // The refresh interval
+        beaconManager.setBackgroundScanPeriod(20);
+        beaconManager.setBackgroundBetweenScanPeriod(10);
+        beaconManager.setForegroundBetweenScanPeriod(10);
         beaconManager.bind(this);
 
         // Init beacon devices
@@ -91,15 +93,17 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                 // This method will be executed many times according to the size of the refresh interval.
                 // Try to update the distance of the devices
-                b1.updateDistance(beacons);
-                b2.updateDistance(beacons);
-                b3.updateDistance(beacons);
+                for (Beacon theBeacon : beacons) {
+                    b1.updateDistance(theBeacon);
+                    b2.updateDistance(theBeacon);
+                    b3.updateDistance(theBeacon);
+                }
                 theNear = getMinOne(getMinOne(b1, b2), b3);
 
                 // Update Displays
                 MainActivity.this.runOnUiThread( new Runnable() {
                     public void run() {
-                        if (theNear != null && theNear.distance < 0.35) {
+                        if (theNear != null && theNear.distance < 0.30) {
                             // If the near beacon is inside the range, do this action
                             displayLocation.setText(theNear.name); // Update the largest text.
 
@@ -119,9 +123,6 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                         b1.updateDisplayDistance();
                         b2.updateDisplayDistance();
                         b3.updateDisplayDistance();
-                        b1.toString();
-                        b2.toString();
-                        b3.toString();
                     }
                 });
             }
@@ -183,6 +184,13 @@ class MyBeacon {
         displayName.setText(name + " :  ");
     }
 
+    public void updateDistance(Beacon _beacon) {
+        if (_beacon.getBluetoothAddress().equals(this.macAddress)) {
+            distance = _beacon.getDistance(); // Calculate the distance based on RSSI.
+        }
+    }
+
+    /*
     public boolean updateDistance(Beacon _beacon) {
         if (_beacon.getBluetoothAddress().equals(this.macAddress)) {
             distance = _beacon.getDistance(); // Calculate the distance based on RSSI.
@@ -190,7 +198,9 @@ class MyBeacon {
         } else
             return false;
     }
+    */
 
+    /*
     public void updateDistance(Collection<Beacon> beacons) {
         for (Beacon theBeacon : beacons) {
             if (updateDistance(theBeacon))
@@ -199,6 +209,7 @@ class MyBeacon {
         distance = 0d;
 
     }
+    */
 
     public void updateDisplayDistance() {
         String str;
