@@ -119,9 +119,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                         b1.updateDisplayDistance();
                         b2.updateDisplayDistance();
                         b3.updateDisplayDistance();
-                        b1.toString();
-                        b2.toString();
-                        b3.toString();
+
                     }
                 });
             }
