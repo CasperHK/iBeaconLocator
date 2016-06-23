@@ -30,5 +30,15 @@ Resources
 4. **MainActivity.java** : <br/>
    https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/src/main/java/hk/bds/ibeaconlocator/MainActivity.java
 
-5. **Android Developers Website** : <br/>
+
+
+References
+-----------------------------------------
+1. **Android Developers Website** : <br/>
    https://developer.android.com/
+
+2. **Android Beacon Library** : <br/>
+   https://altbeacon.github.io/android-beacon-library/
+
+3. **Android Beacon Library Documentations (JavaDoc)** : <br/>
+   https://altbeacon.github.io/android-beacon-library/javadoc/index.html
