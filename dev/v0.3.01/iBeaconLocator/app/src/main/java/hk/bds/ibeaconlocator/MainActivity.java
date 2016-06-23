@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         beaconManager = BeaconManager.getInstanceForApplication(this);
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24")); // Set the beacon brand
         //beaconManager.setRssiFilterImplClass(ArmaRssiFilter.class);
+        Beacon.setHardwareEqualityEnforced(true);
         RangedBeacon.setSampleExpirationMilliseconds(5000);    // The refresh interval
         beaconManager.setBackgroundScanPeriod(20);
         beaconManager.setBackgroundBetweenScanPeriod(10);
