@@ -19,7 +19,13 @@ Link : https://github.com/CasperHK/iBeaconLocator/blob/master/build/V0.4/app-deb
 
 Resources
 -----------------------------------
-build.gradle : https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/build.gradle
-AndroidManifest.xml : https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/src/main/AndroidManifest.xml
-activity_main.xml (Layout) : https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/src/main/res/layout/activity_main.xml
-MainActivity.java : https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/src/main/java/hk/bds/ibeaconlocator/MainActivity.java
+1. **build.gradle** : <br/>
+   https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/build.gradle
+
+2. **AndroidManifest.xml** : <br/>
+   https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/src/main/AndroidManifest.xml
+
+3. **activity_main.xml (Layout)** : https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/src/main/res/layout/activity_main.xml
+
+4. **MainActivity.java** : <br/>
+   https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/src/main/java/hk/bds/ibeaconlocator/MainActivity.java
