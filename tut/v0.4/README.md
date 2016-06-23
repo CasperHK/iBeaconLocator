@@ -29,3 +29,6 @@ Resources
 
 4. **MainActivity.java** : <br/>
    https://github.com/CasperHK/iBeaconLocator/blob/master/tut/v0.4/src/iBeaconLocator/app/src/main/java/hk/bds/ibeaconlocator/MainActivity.java
+
+5. **Android Developers Website** : <br/>
+   https://developer.android.com/
